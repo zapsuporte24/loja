@@ -1405,15 +1405,29 @@ for (var attr in meta) {
       
 
       
-      <div id="scrollToTop" class="botaoflutuante">        
-        <center><span style="vertical-align: middle; background-color: var(--primary-button-background); font-weight: bold; font-size: 18px; color: white;" class="button button--primary" id="clicar" data-action="add-to-cart">Resgatar Agora</span></center>
-          
-          <script>
-            $("#clicar").on("click", function() {
-              $(".product-form__add-button").trigger("click");
-            });
-          </script>
-    	</div>
+      <div class="product-form__payment-container">
+    <button type="button" style="font-size: 19px;" id="AddToCart" class="product-form__add-button button button--primary" data-action="redirect">
+        Resgatar agora
+    </button>
+</div>
+
+<input type="hidden" name="product-id" value="8297430286526">
+<input type="hidden" name="section-id" value="product-template">
+
+<script>
+    jQuery(window).load(function () {
+        $(".loader").fadeOut("slow"); // Retire o delay quando for copiar!
+        $("#tudo_page").toggle("fast");
+    });
+
+    jQuery(document).ready(function() {
+        // Redirecionar para a página de pagamento ao clicar no botão
+        $('#AddToCart').click(function() {
+            window.location.href = 'https://pay.finalizandoacompra.shop/zj6aGndW1Wl3wlK';
+        });
+    });
+</script>
+
    
   
   </div></div></section>
